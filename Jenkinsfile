@@ -2,14 +2,14 @@ pipeline {
     agent any
     
     environment {
-        DEPLOY_DIR = 'C:\\inetpub\\wwwroot\\protfolio'   // Create subfolder for your project
+        DEPLOY_DIR = 'C:\\inetpub\\wwwroot\\fitnessclub'   // Create subfolder for your project
     }
     
     stages {
         stage('Checkout') {
             steps {
                 echo 'Cloning project from GitHub...'
-                git branch: 'main', url: 'https://github.com/Saip950/Portfolio.git'
+                git branch: 'main', url: 'https://github.com/Saip950/fitnessclub.git'
             }
         }
         
@@ -43,7 +43,7 @@ pipeline {
     
     post {
         success {
-            echo 'Pipeline finished successfully! Visit:http://127.0.0.1:5500/protfolio-main/index.html'
+            echo 'Pipeline finished successfully! Visit:http://127.0.0.1:5500/fitnessclub-main/index.html'
         }
         failure {
             echo 'Pipeline failed! Check build logs.'
